@@ -47,12 +47,15 @@ const UserForm = (props) => {
                     <label>Password: </label>
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     {
-                    firstName.length < 8 ? <p style={{color:"red"}}>Password must match and be at least 8 characters</p>:<p></p>
+                    password.length < 8 ? <p style={{color:"red"}}>Password must match and be at least 8 characters</p>:<p></p>
                 }
                 </div>
                 <div>
                     <label>Cofmrim Password: </label>
                     <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                    {
+                    password != confirmPassword ? <p style={{color:"red"}}>Passwords must match</p>:<p></p>
+                }
                     
                 </div>
             </div>
